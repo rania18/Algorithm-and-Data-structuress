@@ -1,0 +1,20 @@
+ALGORITHM checkpoitn_algo
+VAR
+    sentence : string;
+    lengthSentence : INTEGER := 0;
+    numberWords: INTEGER := 0;
+    numberVowels : INTEGER := 0;
+BEGIN
+    Read(sentence);
+    repeat
+        SWITCH ([lengthSentence]) DO
+        case " " : numberWords:=numberWords+1;lengthSentence:=lengthSentence+1;BREAK;
+        case "a","e","i","o","u","y" : numberVowels:=numberVowels+1;lengthSentence:=lengthSentence+1;BREAK;
+        default : lengthSentence:=lengthSentence+1;
+    until (sentence[lengthSentence]=".")
+    lengthSentence :=lengthSentence+1
+    numberWords :=numberWords+1
+    Write("The length of the sentence is : ",lengthSentence);
+    Write("The number of words in the sentence is : ",numberWords);
+    Write("The number of vowels in the sentence is : ",numberVowels);
+END
